@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FriendsTVC.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    UINavigationController * nC = [[UINavigationController alloc] init];
+    
+    //set TVC as rootTVC
+    FriendsTVC * rootTVC = [[FriendsTVC alloc] init];
+    self.window.rootViewController = nC;
+    
+    nC.viewControllers = @[rootTVC];
+    
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
+    
     return YES;
 }
 
