@@ -5,6 +5,7 @@
 //  Created by Ebony Nyenya on 1/8/15.
 //  Copyright (c) 2015 Ebony Nyenya. All rights reserved.
 //
+//This is the viewcontroller that handles the view on which the username is typed in, 'Gituser' button is pressed or 'cancel' button is pressed.
 
 #import "NewFriendVC.h"
 

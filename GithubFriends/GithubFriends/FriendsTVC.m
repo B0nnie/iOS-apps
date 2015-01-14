@@ -27,18 +27,18 @@
     friends = [ @[
                   
                   @{
-        @"login":@"",
-        @"id": @"",
-        @"avatar_url": @"https://avatars.githubusercontent.com/u/%d",
+        @"login":@"B0nnie",
+        @"id": @"10394696",
+        @"avatar_url": @"https://avatars.githubusercontent.com/u/10394696?v=3",
         @"name": @"",
         @"company": @"",
         @"blog": @"",
         @"location": @"",
         @"email": @"",
-        @"public_repos": @"",
-        @"public_gists": @"",
-        @"followers": @"",
-        @"following": @"",
+        @"public_repos": @"1",
+        @"public_gists": @"0",
+        @"followers": @"4",
+        @"following": @"8",
         
     }
                   
@@ -116,9 +116,10 @@
     
     return cell;
 }
-
+                                            //this is a delegate method (did SelecrRow is)
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath //this pushes the cell
 {
+    //this is a tableview delegate method
     FriendDetailVC *detailVC = [[FriendDetailVC alloc] init];
     
     detailVC.friendInfo = friends[indexPath.row];

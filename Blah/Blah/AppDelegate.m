@@ -25,7 +25,7 @@
     
     int value = number1 + number2;
     
-    NSLog(@"The value is %d",value);
+    NSLog(@"The value is %i",value);
     
     NSString * name = @"Jo";
     
@@ -34,25 +34,8 @@
     NSNumber * number = @5;
     
     NSLog(@"%@",number);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
     
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
     

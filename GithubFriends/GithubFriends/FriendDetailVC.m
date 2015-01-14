@@ -22,15 +22,20 @@
 
 */
  
-@interface FriendDetailVC ()
+@interface FriendDetailVC () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
 @implementation FriendDetailVC
+{
+    NSArray * repos;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     NSString * username = self.friendInfo[@"login"];
     
@@ -42,13 +47,45 @@
     
     NSData * responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil]; //class method, this is going to return a chunk of data, will send a request to the url, it will come back as JSON text
     
-    NSArray * repos = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error:nil];
+    repos = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error:nil];
     
     NSLog(@"%@" , repos);
     
+    UITableView * tableView = [[UITableView alloc] initWithFrame: CGRectMake(0, 200, 320, 368)];
+    
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    
+    [self.view addSubview:tableView];
     
     
     
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return repos.count;
+}
+
+- (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    
+    
+    
+    //NSDictionary *repoInfo = repos[indexPath.row];
+    //cell.textLabel.text = repoInfo[@"name"];
+    //same as one line code below for line with @"name"
+    
+    cell.textLabel.text = repos[indexPath.row][@"name"];
+    if (repos[indexPath.row][@"description"] == [NSNull null]) {
+    }
+    else {
+         cell.detailTextLabel.text = repos[indexPath.row][@"description"];
+    }
+   
+
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

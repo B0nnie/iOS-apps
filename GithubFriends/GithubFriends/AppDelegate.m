@@ -30,6 +30,8 @@
     
     [self.window makeKeyAndVisible];
     
+    NSLog(@"Number is %d and her name is %@ and the color is %@ and is it %u",0,@"jane",[UIColor greenColor],YES);
+    
     // Override point for customization after application launch.
     
     return YES;

@@ -10,24 +10,25 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-// Homework 1/12/15:
-// 1) Center squares on view - done
+/* Homework 1/12/15:
+ 
+ 1) Center squares on view - done
 
-// 2) Score labels on top that keep track of wins for each player (need 2 global instance variables that keep track of each player's score) - done
+ 2) Score labels on top that keep track of wins for each player (need 2 global instance variables that keep track of each player's score) - done
 
-// 3) Make buttons change colors instead of title (reset colors when play again is tapped) - will change one color for player 1 and another color for player 2 - done
+ 3) Make buttons change colors instead of title (reset colors when play again is tapped) - will change one color for player 1 and another color for player 2 - done
 
-// 4) Button at bottom that resets game scores - done
+ 4) Button at bottom that resets game scores - done
 
-// Extra: Alert view for draw (hint: "arraycontains", if it doesn't contain a 0 - if there are no 0s left)
-
-@interface ViewController () <UIAlertViewDelegate>
+ Extra: Alert view for draw (hint: "arraycontains", if it doesn't contain a 0 - if there are no 0s left)
+*/
+@interface ViewController () <UIAlertViewDelegate> //jo why did we add this? also, it's deprecated, so stop using?
 
 @end
 
 @implementation ViewController
 
-//these things need to go across the whole board
+//these things need to be used across the whole board; they're our global instance variables
 {
     int playerTurn;
     
@@ -48,7 +49,38 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.view.backgroundColor = [UIColor blackColor];
     
+    
+    //this whole section is adding player labels at the top, hw pt 2
+    player1points = 0;
+    player2points = 0;
+    
+    //Player 1 Label
+    playerScore1 = [[UILabel alloc] initWithFrame: CGRectMake (20, 20, 100, 40)]; // jo need help here with getting player labels to work regardless of iphone used
+    playerScore1.backgroundColor = [UIColor purpleColor];
+    playerScore1.text = [NSString stringWithFormat:@"Player 1:%d",player1points];
+    playerScore1.layer.cornerRadius = 15;
+    playerScore1.clipsToBounds = YES;
+    playerScore1.textAlignment = NSTextAlignmentCenter;
+    playerScore1.textColor = [UIColor whiteColor];
+    
+    //Player 2 Label
+    playerScore2 = [[UILabel alloc] initWithFrame: CGRectMake (SCREEN_WIDTH - 120, 20, 100, 40)];
+    playerScore2.backgroundColor = [UIColor redColor];
+    playerScore2.text = [NSString stringWithFormat:@"Player 2:%d",player1points];
+    playerScore2.layer.cornerRadius = 15;
+    playerScore2.clipsToBounds = YES;
+    playerScore2.textAlignment = NSTextAlignmentCenter;
+    playerScore2.textColor = [UIColor whiteColor];
+    
+    [self.view addSubview:playerScore1];
+    [self.view addSubview:playerScore2];
+    
+    
+    
+    
+//this is creating the rows and columns of the game
     buttons = [@[] mutableCopy];
     
     playerTurn = 1;
@@ -65,30 +97,14 @@
     CGFloat width = 100;
     CGFloat height = 100;
     
+    CGFloat padding = -10;
+    
+    CGFloat fullWidth = (colCount * width) + (colCount - 1) * padding;
+    CGFloat fullHeight = (rowCount * height) + (rowCount - 1) * padding;
+    
     int buttonCount = 0;
     
     
-    
-    
-    //this is adding player labels at the top, hw pt 2
-     player1points = 0;
-     player2points = 0;
-    
-  
-    playerScore1 = [[UILabel alloc] initWithFrame:(CGRectMake(10, 40, 100, 30))];
-    playerScore1.backgroundColor = [UIColor blueColor];
-    playerScore1.text = [NSString stringWithFormat:@"Player 1:%d",player1points];
-  
-    playerScore2 = [[UILabel alloc] initWithFrame:(CGRectMake(200, 40, 100, 30))];
-    playerScore2.backgroundColor = [UIColor blueColor];
-    playerScore2.text = [NSString stringWithFormat:@"Player 2:%d",player1points];
-    
-    [self.view addSubview:playerScore1];
-    [self.view addSubview:playerScore2];
-    
-    
-    
-    //this is creating the rows and columns of the game
     for (int r = 0; r < rowCount; r++) {
         //loop per row
      
@@ -97,12 +113,15 @@
             
             //loop per column, we'll do all our code here for x row count and y column count
             
-            CGFloat x = c * (width + 10) + (SCREEN_WIDTH - 320)/2;
-            CGFloat y = r * (height + 10) + (SCREEN_HEIGHT - 320)/2;//this centers the squares on the screen (HW pt1)
+            CGFloat x = c * (width + padding) + (SCREEN_WIDTH - fullWidth)/2;
+            CGFloat y = r * (height + padding) + (SCREEN_HEIGHT - fullHeight)/2;//this centers the squares on the screen (HW pt1)
             
             UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(x,y,width, height)];
             
             button.backgroundColor = [UIColor blueColor];
+            button.layer.cornerRadius = height/2;
+            button.alpha = 0.6;
+            button.clipsToBounds = YES;
             
             //[button setTitle:[NSString stringWithFormat: @"%d", buttonCount] forState: UIControlStateNormal];// jo what does forState and UIControl... mean?
             
@@ -119,12 +138,19 @@
         }
         
         //HW pt 4 - part of creating the clear button
-        UIButton * clear = [[UIButton alloc] initWithFrame:CGRectMake(150, 550, 100, 100)];
+        UIButton * clear = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 100)/2, SCREEN_HEIGHT - 100, 100, 100)];
         
-        clear.backgroundColor = [UIColor blueColor];
+        
+        clear.backgroundColor = [UIColor magentaColor];
         [clear setTitle:@"Clear" forState:UIControlStateNormal];
         
         [clear addTarget: self action:@selector (clearTapped:) forControlEvents:UIControlEventTouchUpInside];
+        
+        clear.layer.cornerRadius = 50;
+        clear.clipsToBounds = YES;
+        [clear.titleLabel setTextAlignment: NSTextAlignmentCenter];
+        clear.titleLabel.font = [UIFont systemFontOfSize: 35];
+        
         
         [self.view addSubview:clear];
     
@@ -138,7 +164,7 @@
     
     playerScore1.text = [NSString stringWithFormat:@"Player 1:%d",player1points = 0];
 
-    playerScore2.text = [NSString stringWithFormat:@"Player 2:%d",player2points = 0];
+    playerScore2.text = [NSString stringWithFormat:@"Player 2:%d",player2points = 0]; //jo is there a shorter way to do this part?
 
 }
 
@@ -184,7 +210,7 @@
                                  //diagonals
                                  @[@0, @4, @8],
                                  @[@2, @4, @6]
-                                ]; //notice mutableCopy isn't here
+                                ]; 
     
     for (NSArray * possibility in possibilities) {
         
@@ -205,6 +231,16 @@
     if (playerInSquare1 && playerInSquare2 && playerInSquare3) {
         
         //player 1 won
+        //alternate way of incrementing players' scores:
+//        switch (player){
+//            case 1:
+//                player1points++;
+//                break;
+//                
+//            case 2:
+//                player2points++;
+//                break;
+//        }
         
         NSLog(@"Player %d Won", player);
         
@@ -222,6 +258,13 @@
             playerScore2.text = [NSString stringWithFormat:@"Player 2:%d",player2points];
             
         } //another else statement for a draw would go here
+        
+//        else if (player == 0) {
+//            NSString * messageDraw = [NSString stringWithFormat:@""];
+//            
+//            UIAlertView * alertViewDraw = [[UIAlertView alloc] initWithTitle:@"It's a draw!" message: messageDraw delegate:self cancelButtonTitle:@"Play Again!" otherButtonTitles:nil];
+//            [alertViewDraw show];
+//        }
       
     }
     
@@ -256,7 +299,7 @@
     
 }
 
-
+//we didn't do anything with this part
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

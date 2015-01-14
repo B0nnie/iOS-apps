@@ -13,7 +13,7 @@
 // View Controller 1
 // - 2 buttons (one will clear textfields, one will log all textfields)
 // - 3 textfields (username, email, password)
-// - password field should look like one by hidng the text with dots (look in the right panel)
+// - password field should look like one by hiding the text with dots (look in the right panel)
 // - email field should use email keyboard (also in right panel)
 
 // View Controller 2
@@ -21,7 +21,7 @@
 // - each button changes the main view controller's background color
 
 // Add constraints
-// Make the button on view controller 2 circles with no text
+// Make the buttons on view controller 2 circles with no text
 
 @interface ViewController ()
 
