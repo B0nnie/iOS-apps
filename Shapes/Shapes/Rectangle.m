@@ -7,6 +7,7 @@
 //
 
 #import "Rectangle.h"
+IB_DESIGNABLE
 
 @implementation Rectangle
 
@@ -18,6 +19,22 @@ Only override drawRect: if you perform custom drawing.
 
 - (void)drawRect:(CGRect)rect {
      //Drawing code
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [[UIColor purpleColor] set];
+    
+    
+    CGContextMoveToPoint(context, 0, 0);
+    
+    
+    CGContextAddLineToPoint(context, rect.size.width, 0);
+    CGContextAddLineToPoint(context, rect.size.width, rect.size.height);
+     CGContextAddLineToPoint(context, 0, rect.size.height);
+     CGContextAddLineToPoint(context, 0, 0);
+    
+    CGContextFillPath(context);
+ 
+
 }
 
 

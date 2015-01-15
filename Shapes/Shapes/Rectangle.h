@@ -10,4 +10,8 @@
 
 @interface Rectangle : UIView
 
+
+
+- (void)drawRect:(CGRect)rect;
+
 @end

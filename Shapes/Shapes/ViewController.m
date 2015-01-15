@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Rectangle.h"
 
 // Make 3 Classes based on UIView (Rectangle, Ellipse, Triangle)
 
@@ -29,6 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+ //  [self.view addSubview: rectangle];
+    
 }
 
 - (void)didReceiveMemoryWarning {

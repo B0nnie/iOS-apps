@@ -15,6 +15,8 @@
 		293576E61A65C124000EF88D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293576E41A65C124000EF88D /* LaunchScreen.xib */; };
 		293576F21A65C124000EF88D /* ShapesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 293576F11A65C124000EF88D /* ShapesTests.m */; };
 		293577001A65C29E000EF88D /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 293576FF1A65C29E000EF88D /* Rectangle.m */; };
+		293577031A66B026000EF88D /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 293577021A66B026000EF88D /* Triangle.m */; };
+		293577061A66B03C000EF88D /* Ellipse.m in Sources */ = {isa = PBXBuildFile; fileRef = 293577051A66B03C000EF88D /* Ellipse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		293576F11A65C124000EF88D /* ShapesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapesTests.m; sourceTree = "<group>"; };
 		293576FE1A65C29E000EF88D /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
 		293576FF1A65C29E000EF88D /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
+		293577011A66B026000EF88D /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		293577021A66B026000EF88D /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
+		293577041A66B03C000EF88D /* Ellipse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ellipse.h; sourceTree = "<group>"; };
+		293577051A66B03C000EF88D /* Ellipse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ellipse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +90,15 @@
 		293576D41A65C124000EF88D /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				293576D91A65C124000EF88D /* AppDelegate.h */,
-				293576DA1A65C124000EF88D /* AppDelegate.m */,
 				293576FE1A65C29E000EF88D /* Rectangle.h */,
 				293576FF1A65C29E000EF88D /* Rectangle.m */,
 				293576DC1A65C124000EF88D /* ViewController.h */,
 				293576DD1A65C124000EF88D /* ViewController.m */,
+				293577041A66B03C000EF88D /* Ellipse.h */,
+				293577051A66B03C000EF88D /* Ellipse.m */,
+				293577011A66B026000EF88D /* Triangle.h */,
+				293577021A66B026000EF88D /* Triangle.m */,
 				293576DF1A65C124000EF88D /* Main.storyboard */,
-				293576E21A65C124000EF88D /* Images.xcassets */,
-				293576E41A65C124000EF88D /* LaunchScreen.xib */,
 				293576D51A65C124000EF88D /* Supporting Files */,
 			);
 			path = Shapes;
@@ -101,6 +107,10 @@
 		293576D51A65C124000EF88D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				293576E21A65C124000EF88D /* Images.xcassets */,
+				293576E41A65C124000EF88D /* LaunchScreen.xib */,
+				293576D91A65C124000EF88D /* AppDelegate.h */,
+				293576DA1A65C124000EF88D /* AppDelegate.m */,
 				293576D61A65C124000EF88D /* Info.plist */,
 				293576D71A65C124000EF88D /* main.m */,
 			);
@@ -224,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293577061A66B03C000EF88D /* Ellipse.m in Sources */,
+				293577031A66B026000EF88D /* Triangle.m in Sources */,
 				293576DE1A65C124000EF88D /* ViewController.m in Sources */,
 				293576DB1A65C124000EF88D /* AppDelegate.m in Sources */,
 				293576D81A65C124000EF88D /* main.m in Sources */,
