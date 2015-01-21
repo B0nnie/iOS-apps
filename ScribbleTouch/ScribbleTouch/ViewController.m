@@ -41,7 +41,17 @@
     selectedStrokeWidth = sender.value;
 }
 
+//***This code refreshed the view (with the buttons and slider still present after refreshing) when the 'start over' button is tapped***
 - (IBAction)startOverButton:(UIButton *)sender {
+    
+    UIView *parent = self.view.superview;
+    
+    [self.view removeFromSuperview];
+    
+    self.view = nil; // unloads the view
+    
+    [parent addSubview:self.view];
+   
     
 }
     
