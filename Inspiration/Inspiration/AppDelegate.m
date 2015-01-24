@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  FunFacts
+//  Inspiration
 //
-//  Created by Ebony Nyenya on 1/22/15.
+//  Created by Ebony Nyenya on 1/23/15.
 //  Copyright (c) 2015 Ebony Nyenya. All rights reserved.
 //
 

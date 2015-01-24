@@ -1,19 +1,19 @@
 //
-//  FunFactsTests.m
-//  FunFactsTests
+//  InspirationTests.m
+//  InspirationTests
 //
-//  Created by Ebony Nyenya on 1/22/15.
+//  Created by Ebony Nyenya on 1/23/15.
 //  Copyright (c) 2015 Ebony Nyenya. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface FunFactsTests : XCTestCase
+@interface InspirationTests : XCTestCase
 
 @end
 
-@implementation FunFactsTests
+@implementation InspirationTests
 
 - (void)setUp {
     [super setUp];

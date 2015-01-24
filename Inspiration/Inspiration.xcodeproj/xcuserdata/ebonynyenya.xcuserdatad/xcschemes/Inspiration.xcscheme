@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "291AF8BE1A71D1490048291E"
-               BuildableName = "FunFacts.app"
-               BlueprintName = "FunFacts"
-               ReferencedContainer = "container:FunFacts.xcodeproj">
+               BlueprintIdentifier = "29D718DE1A72866E0005E7F1"
+               BuildableName = "Inspiration.app"
+               BlueprintName = "Inspiration"
+               ReferencedContainer = "container:Inspiration.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "291AF8D71A71D1490048291E"
-               BuildableName = "FunFactsTests.xctest"
-               BlueprintName = "FunFactsTests"
-               ReferencedContainer = "container:FunFacts.xcodeproj">
+               BlueprintIdentifier = "29D718F71A72866E0005E7F1"
+               BuildableName = "InspirationTests.xctest"
+               BlueprintName = "InspirationTests"
+               ReferencedContainer = "container:Inspiration.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "291AF8D71A71D1490048291E"
-               BuildableName = "FunFactsTests.xctest"
-               BlueprintName = "FunFactsTests"
-               ReferencedContainer = "container:FunFacts.xcodeproj">
+               BlueprintIdentifier = "29D718F71A72866E0005E7F1"
+               BuildableName = "InspirationTests.xctest"
+               BlueprintName = "InspirationTests"
+               ReferencedContainer = "container:Inspiration.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "291AF8BE1A71D1490048291E"
-            BuildableName = "FunFacts.app"
-            BlueprintName = "FunFacts"
-            ReferencedContainer = "container:FunFacts.xcodeproj">
+            BlueprintIdentifier = "29D718DE1A72866E0005E7F1"
+            BuildableName = "Inspiration.app"
+            BlueprintName = "Inspiration"
+            ReferencedContainer = "container:Inspiration.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "291AF8BE1A71D1490048291E"
-            BuildableName = "FunFacts.app"
-            BlueprintName = "FunFacts"
-            ReferencedContainer = "container:FunFacts.xcodeproj">
+            BlueprintIdentifier = "29D718DE1A72866E0005E7F1"
+            BuildableName = "Inspiration.app"
+            BlueprintName = "Inspiration"
+            ReferencedContainer = "container:Inspiration.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "291AF8BE1A71D1490048291E"
-            BuildableName = "FunFacts.app"
-            BlueprintName = "FunFacts"
-            ReferencedContainer = "container:FunFacts.xcodeproj">
+            BlueprintIdentifier = "29D718DE1A72866E0005E7F1"
+            BuildableName = "Inspiration.app"
+            BlueprintName = "Inspiration"
+            ReferencedContainer = "container:Inspiration.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

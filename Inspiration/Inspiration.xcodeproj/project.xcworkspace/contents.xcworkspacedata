@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:FunFacts.xcodeproj">
+      location = "self:Inspiration.xcodeproj">
    </FileRef>
 </Workspace>
